@@ -17,9 +17,10 @@ import org.springframework.web.bind.annotation.RestController;
 public class LogTestController {
 
     @GetMapping("/addInventory/{name}")
-    public void addInventory(@PathVariable String name) throws InterruptedException {
+    public String addInventory(@PathVariable String name) throws InterruptedException {
         Thread.sleep(2000);
         log.error("商品:{} 库存添加成功", name);
+        return name;
     }
 
     @GetMapping("/addInventoryError/{name}")

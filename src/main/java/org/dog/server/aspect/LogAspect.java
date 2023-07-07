@@ -57,11 +57,10 @@ public class LogAspect {
     /**
      * 后置通知.
      *
-     * @param result return val
      */
     @AfterReturning(pointcut = "pointCutMethod()", returning = "result")
     public void doAfterReturning(String result) {
-        log.info("---后置通知:, 返回值: {}", result);
+        log.info("---后置通知: 返回值: {}", result);
     }
 
 
